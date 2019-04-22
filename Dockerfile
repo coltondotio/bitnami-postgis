@@ -1,8 +1,8 @@
-FROM bitnami/postgresql:latest
+FROM bitnami/postgresql:10
 USER root
 
 RUN mkdir -p /var/lib/apt/lists/partial \
-   && install_packages wget gcc make build-essential libxml2-dev libgeos-dev libproj-dev libgdal-dev postgresql-contrib
+   && install_packages wget gcc make build-essential libxml2-dev libgeos-dev libproj-dev libgdal-dev postgresql-contrib libprotobuf-c1 libprotobuf-c-dev protobuf-c-compiler
 
 ENV POSTGIS_VERSION 2.5.2
 
